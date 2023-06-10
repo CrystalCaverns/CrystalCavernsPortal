@@ -1,0 +1,8 @@
+name: CrystalCavernsPortal
+version: '1.0'
+main: cc.crystalcavernsportal.CrystalCavernsPortal
+api-version: 1.19
+depend: [CommandPanels]
+commands:
+  profile:
+    description: Used to open a player's profile.
