@@ -11,6 +11,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.io.File;
 
+import static cc.crystalcavernsportal.CrystalCavernsPortal.toSend;
+
 public class PlayerJoin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
@@ -19,6 +21,7 @@ public class PlayerJoin implements Listener {
         File file = new File("/home/container/plugins/CommandPanels/panels/private_realms.yml");
         Panel panel = new Panel(file, "private_realms");
         p.teleport(spawn);
+        toSend.add(p.getUniqueId());
         panel.open(p, PanelPosition.Top);
     }
 }

@@ -6,9 +6,6 @@ import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -16,8 +13,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public final class CrystalCavernsPortal extends JavaPlugin implements Listener {
-    public List<UUID> toSend = new ArrayList<>();
+public final class CrystalCavernsPortal extends JavaPlugin {
+    public static List<UUID> toSend = new ArrayList<>();
     @Override
     public void onEnable() {
         Objects.requireNonNull(getCommand("profile")).setExecutor(new cc.crystalcavernsportal.ProfileCommand());
@@ -30,15 +27,10 @@ public final class CrystalCavernsPortal extends JavaPlugin implements Listener {
                     message = PlaceholderAPI.setPlaceholders(player, message);
                     TextComponent formatted_message = new TextComponent(MineDown.parse(message));
                     formatted_message.setFont("currency_display");
-                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, formatted_message);
+                    player.sendMessage(ChatMessageType.ACTION_BAR,formatted_message);
                 }
             }
         }, 30L, 30L);
-    }
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
-        toSend.add(player.getUniqueId());
     }
 }
 
