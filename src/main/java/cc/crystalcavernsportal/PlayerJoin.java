@@ -18,10 +18,13 @@ public class PlayerJoin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         Location spawn = new Location(Bukkit.getWorld("world"),0,1,0,0,0);
-        File file = new File("/home/container/plugins/CommandPanels/panels/private_realms.yml");
-        Panel panel = new Panel(file, "private_realms");
         p.teleport(spawn);
         toSend.add(p.getUniqueId());
-        panel.open(p, PanelPosition.Top);
+        p.sendTitle("\uDBEA\uDDE8", "", 0, 10, 10);
+        Bukkit.getScheduler().runTaskLater(CrystalCavernsPortal.getPlugin(), () -> {
+            File file = new File("/home/container/plugins/CommandPanels/panels/private_realms.yml");
+            Panel panel = new Panel(file, "private_realms");
+            panel.open(p, PanelPosition.Top);
+        }, 30L);
     }
 }

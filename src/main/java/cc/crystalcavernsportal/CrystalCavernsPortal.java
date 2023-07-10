@@ -6,6 +6,7 @@ import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public final class CrystalCavernsPortal extends JavaPlugin {
         Objects.requireNonNull(getCommand("profile")).setExecutor(new cc.crystalcavernsportal.ProfileCommand());
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         getLogger().info("Crystal Caverns Portal plugin loaded successfully!");
+        plugin = this;
         Bukkit.getScheduler().runTaskTimer(this, () -> {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (toSend.contains(player.getUniqueId())) {
@@ -32,5 +34,9 @@ public final class CrystalCavernsPortal extends JavaPlugin {
             }
         }, 30L, 30L);
     }
+    public static Plugin getPlugin() {
+        return plugin;
+    }
+    public static JavaPlugin plugin;
 }
 
