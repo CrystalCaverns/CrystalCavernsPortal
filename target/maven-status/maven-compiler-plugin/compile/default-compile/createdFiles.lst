@@ -1,3 +1,7 @@
-cc\crystalcavernsportal\ProfileCommand.class
+cc\crystalcavernsportal\SpawnCommand.class
+cc\crystalcavernsportal\PlayerPortal.class
+cc\crystalcavernsportal\RealmCommand.class
+cc\crystalcavernsportal\PlayerQuit.class
 cc\crystalcavernsportal\CrystalCavernsPortal.class
 cc\crystalcavernsportal\PlayerJoin.class
+cc\crystalcavernsportal\PlayerDeath.class

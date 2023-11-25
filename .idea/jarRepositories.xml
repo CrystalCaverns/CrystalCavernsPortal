@@ -17,6 +17,11 @@
       <option name="url" value="https://oss.sonatype.org/content/groups/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="flow-api" />
+      <option name="name" value="flow-api" />
+      <option name="url" value="https://repo.rapture.pw/repository/maven-releases/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="minebench-repo" />
       <option name="name" value="minebench-repo" />
       <option name="url" value="https://repo.minebench.de/" />
@@ -35,6 +40,11 @@
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="is-snapshots" />
+      <option name="name" value="is-snapshots" />
+      <option name="url" value="https://repo.infernalsuite.com/repository/maven-snapshots/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="jboss.community" />

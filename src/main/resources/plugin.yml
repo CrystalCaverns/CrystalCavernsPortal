@@ -4,5 +4,9 @@ main: cc.crystalcavernsportal.CrystalCavernsPortal
 api-version: 1.19
 depend: [CommandPanels]
 commands:
-  profile:
-    description: Used to open a player's profile.
+  realm:
+    description: Used for internal processes.
+    permission: crystalcaverns.realm
+  spawn:
+    description: Teleports the player to the server's global spawn point.
+    aliases: [lobby, hub]
